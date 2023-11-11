@@ -35,6 +35,3 @@ sh bin/finish.sh
 sh bin/finish.sh 20230101
 => ./*.py のファイルが ./archive/20230101 内に移動される
 ```
-
-# TODO
-- パッケージ管理が入っていない（homebrew の python@3.11 を使っている）ので、パッケージ管理を導入してpypyで実行可能にする
