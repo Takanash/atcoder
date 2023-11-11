@@ -16,9 +16,9 @@ AtCoder用スクリプト（Python3）
 # 使い方
 ## 開始
 ```
-sh bin/start.sh [問題番号]
+./bin/start.sh [問題番号]
 ex)
-sh bin/start.sh A
+./bin/start.sh A
 => ./[今日の日付]_A.py が作成される
 ```
 
@@ -29,9 +29,9 @@ python3 [ファイル名].py < input.txt
 
 ## 終了
 ```
-sh bin/finish.sh
+./bin/finish.sh
 => ./*.py のファイルが ./archive/[今日の日付] 内に移動される
 
-sh bin/finish.sh 20230101
+./bin/finish.sh 20230101
 => ./*.py のファイルが ./archive/20230101 内に移動される
 ```
