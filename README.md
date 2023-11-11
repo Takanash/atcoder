@@ -24,7 +24,7 @@ ex)
 
 ## テスト
 ```
-python3 [ファイル名].py < input.txt
+python [ファイル名].py < input.txt
 ```
 
 ## 終了
