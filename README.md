@@ -1,4 +1,13 @@
-AtCoder用スクリプト（Python3）
+AtCoder用スクリプト（Python3/pypy）
+
+# 前提
+pyenvが導入されていること
+```
+❯ pyenv versions
+  system
+  3.11.6
+* pypy3.10-7.3.12
+```
 
 # ディレクトリ
 ```
