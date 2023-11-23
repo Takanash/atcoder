@@ -8,7 +8,7 @@ fi
 
 filecount=`find . -maxdepth 1 -type f -name '*.py' | wc -l`
 if [ $filecount -ge 1 ]; then
-  eval "mkdir archive/$dir"
+  eval "mkdir -p archive/$dir"
   eval "mv *.py archive/$dir"
 else
   echo "対象のファイルがないためアーカイブされませんでした"
