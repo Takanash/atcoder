@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -ne 1 ]; then
-  echo "ABCの問題番号を指定して下さい ex) bin/start.sh A" 1>&2
+  echo "引数にて問題番号を指定して下さい ex) bin/start.sh A" 1>&2
   exit 1
 fi
 
