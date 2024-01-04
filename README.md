@@ -44,3 +44,13 @@ python [ファイル名].py < input.txt
 ./bin/finish.sh 20230101
 => ./*.py のファイルが ./archive/20230101 内に移動される
 ```
+
+## デバッグ
+以下のサイトを参考に設定
+
+https://minus9d.hatenablog.com/entry/2020/07/23/184323
+
+- VSCodeでPythonの拡張機能をあらかじめインストールする
+- `Python: 競プロ` の構成を実行する
+- ショートカットキーは`cmd+shift+D + space`
+

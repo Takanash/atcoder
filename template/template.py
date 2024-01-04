@@ -1,7 +1,9 @@
 import sys
-# import time
 
 def main():
+  # 提出用
+  # input = sys.stdin.readline
+  # デバッグ用（提出時に使うと遅い可能性あり）
   if len(sys.argv) == 2:
     sys.stdin = open(sys.argv[1])
   # 数値 n を取得する場合
@@ -16,6 +18,8 @@ def main():
   a = [input() for i in range(n)]
 
 
+# 時間計測用
+# import time
 # start = time.time()
 
 if __name__ == '__main__':
