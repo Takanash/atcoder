@@ -1,8 +1,9 @@
 import sys
-import time
+# import time
 
 def main():
-  input = sys.stdin.readline
+  if len(sys.argv) == 2:
+    sys.stdin = open(sys.argv[1])
   # 数値 n を取得する場合
   n = int(input())
   # 文字列 s を取得する場合
