@@ -1,11 +1,9 @@
 import sys
 
+DEBUG=False
+TIME=False
+
 def main():
-  # 提出用
-  # input = sys.stdin.readline
-  # デバッグ用（提出時に使うと遅い可能性あり）
-  if len(sys.argv) == 2:
-    sys.stdin = open(sys.argv[1])
   # 数値 n を取得する場合
   n = int(input())
   # 文字列 s を取得する場合
@@ -21,13 +19,21 @@ def main():
 
 
 
-# 時間計測用
-# import time
-# start = time.time()
+if TIME:
+  import time
+  start = time.time()
+
+if DEBUG:
+  if len(sys.argv) == 2:
+    sys.stdin = open(sys.argv[1])
+else:
+  input = sys.stdin.readline
+
 
 if __name__ == '__main__':
   main()
 
-# end = time.time()
-# time_diff = end - start
-# print(f"実行時間: {str(time_diff)}")
+if TIME:
+  end = time.time()
+  time_diff = end - start
+  print(f"実行時間: {str(time_diff)}")
