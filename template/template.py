@@ -1,5 +1,5 @@
 import sys
-
+import sys
 DEBUG=False
 TIME=False
 
@@ -15,8 +15,14 @@ def main():
   # n 行の数値の配列 a を取得する場合
   a = [int(input()) for _ in range(n)]
   # n 行の `l r` を二次元配列[[l1, r1], ...]として取得する場合 
-  l_r = [list(map(int, input().replace('\n', '').split(' '))) for _ in range(n)]
+  l_r = [list(map(int, input().split(' '))) for _ in range(n)]
 
+
+
+# 標準エラー出力に引数を出力する
+# デバッグ用
+def error(*args, end="\n"):
+  print(*args, end=end, file=sys.stderr)
 
 
 # 10進数→n進数への変換
