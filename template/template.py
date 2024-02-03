@@ -9,9 +9,9 @@ def main():
   # 文字列 s を取得する場合
   s = input()
   # 数値 n, x を取得する場合
-  n, x = [int(i) for i in input().replace('\n', '').split(' ')]
+  n, x = [int(i) for i in input().split(' ')]
   # 1行に n 個ある数値を配列 s として取得する場合
-  s = [int(i) for i in input().replace('\n', '').split(' ')]
+  s = [int(i) for i in input().split(' ')]
   # n 行の数値の配列 a を取得する場合
   a = [int(input()) for _ in range(n)]
   # n 行の `l r` を二次元配列[[l1, r1], ...]として取得する場合 
@@ -27,6 +27,21 @@ def base10int(value, base):
     if (int(value / base)):
         return base10int(int(value / base), base) + str(value % base)
     return str(value % base)
+
+# ビット全探索
+# 引数の配列の数値の和であり得る組み合わせ全てを返す
+# @param [list] arr 数値の配列
+# @return [list] あり得る組み合わせの配列
+def bitwise_binary_search(arr):
+  sum_list = []
+  for i in range(2 ** len(arr)):
+    sum = 0 # 現在の合計値
+    for j in range(len(arr)):
+      wari = (2 ** j)
+      if (i // wari) % 2 == 1:
+        sum += arr[j]
+    sum_list.append(sum)
+  return sum_list
 
 
 if TIME:
