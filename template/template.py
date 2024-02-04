@@ -4,18 +4,16 @@ DEBUG=False
 TIME=False
 
 def main():
-  # 数値 n を取得する場合
-  n = int(input())
-  # 文字列 s を取得する場合
-  s = input()
-  # 数値 n, x を取得する場合
-  n, x = [int(i) for i in input().split(' ')]
-  # 1行に n 個ある数値を配列 s として取得する場合
-  s = [int(i) for i in input().split(' ')]
-  # n 行の数値の配列 a を取得する場合
-  a = [int(input()) for _ in range(n)]
-  # n 行の `l r` を二次元配列[[l1, r1], ...]として取得する場合 
-  l_r = [list(map(int, input().split(' '))) for _ in range(n)]
+  # 数値Nを取得する場合
+  N = int(input())
+  # 数値N, Xを取得する場合
+  N, X = [int(i) for i in input().split(' ')]
+  # 1行の空白文字で分割された数値を配列Sとして取得する場合
+  S = [int(i) for i in input().split(' ')]
+  # N行の数値の配列Aを取得する場合
+  A = [int(input()) for _ in range(N)]
+  # N 行の `L R` を二次元配列[[L1, R1], ...]として取得する場合 
+  L_R = [list(map(int, input().split(' '))) for _ in range(N)]
 
 
 
