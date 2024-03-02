@@ -32,6 +32,7 @@ def base10int(value, base):
         return base10int(int(value / base), base) + str(value % base)
     return str(value % base)
 
+
 # ビット全探索
 # 引数の配列の数値の和であり得る組み合わせ全てを返す
 # @param [list] arr 数値の配列
@@ -46,6 +47,26 @@ def bitwise_binary_search(arr):
         sum += arr[j]
     sum_list.append(sum)
   return sum_list
+
+
+# ユークリッドの互除法
+# 2つの数値の最大公約数を求める
+# math.gcd(a, b) でもよい
+# @param [int] a 数値
+# @param [int] b 数値
+# @return [int] 最大公約数
+def gcd(a, b):
+  while b:
+    a, b = b, a % b
+  return a
+
+# 2つの数値の最小公倍数を求める
+# math.lcm(a, b) でもよい
+# @param [int] a 数値
+# @param [int] b 数値
+# @return [int] 最小公倍数
+def lcm(a, b):
+  return a * b // gcd(a, b)
 
 
 if TIME:
