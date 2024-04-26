@@ -4,16 +4,11 @@ DEBUG=False
 TIME=False
 
 def main():
-  # 数値Nを取得する場合
   N = int(input())
-  # 数値N, Xを取得する場合
-  N, X = [int(i) for i in input().split(' ')]
-  # 1行の空白文字で分割された数値を配列Sとして取得する場合
-  S = [int(i) for i in input().split(' ')]
-  # N行の数値の配列Aを取得する場合
-  A = [int(input()) for _ in range(N)]
-  # N 行の `L R` を二次元配列[[L1, R1], ...]として取得する場合 
-  L_R = [list(map(int, input().split(' '))) for _ in range(N)]
+  A = [int(i) for i in input().split(' ')]
+
+  ans = - sum(A)
+  print(ans)
 
 
 
@@ -86,4 +81,4 @@ if __name__ == '__main__':
 if TIME:
   end = time.time()
   time_diff = end - start
-  error(f"実行時間: {str(time_diff)}")
+  print(f"実行時間: {str(time_diff)}")

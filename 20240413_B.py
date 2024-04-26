@@ -1,21 +1,32 @@
 import sys
 
-DEBUG=False
+DEBUG=True
 TIME=False
 
 def main():
-  # 数値Nを取得する場合
-  N = int(input())
-  # 数値N, Xを取得する場合
-  N, X = [int(i) for i in input().split(' ')]
-  # 1行の空白文字で分割された数値を配列Sとして取得する場合
-  S = [int(i) for i in input().split(' ')]
-  # N行の数値の配列Aを取得する場合
-  A = [int(input()) for _ in range(N)]
-  # N 行の `L R` を二次元配列[[L1, R1], ...]として取得する場合 
-  L_R = [list(map(int, input().split(' '))) for _ in range(N)]
+  S = input()
 
+  arr = [0 for _ in range(28)]
 
+  for s in S:
+    arr[ord(s) - ord('a')] += 1
+  error(arr)
+  h = {}
+
+  for i, a in enumerate(arr):
+    if a == 0:
+      continue
+    if a in h:
+      h[a].append(i)
+    else:
+      h[a] = [i]
+  error(h)
+
+  for k, v in h.items():
+    if len(v) != 0 and len(v) != 2:
+      print('No')
+      return
+  print('Yes')
 
 # 標準エラー出力に引数を出力する
 # デバッグ用
@@ -86,4 +97,4 @@ if __name__ == '__main__':
 if TIME:
   end = time.time()
   time_diff = end - start
-  error(f"実行時間: {str(time_diff)}")
+  print(f"実行時間: {str(time_diff)}")
