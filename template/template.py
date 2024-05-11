@@ -24,6 +24,7 @@ def error(*args, end="\n"):
 
 
 # 10進数→n進数への変換
+# CAUTION: 11進数以上は変換不可
 # @param [int] value 変換する値
 # @param [int] base 変換するn進数
 # @return [str] n進数に変換した値
@@ -67,6 +68,22 @@ def gcd(a, b):
 # @return [int] 最小公倍数
 def lcm(a, b):
   return a * b // gcd(a, b)
+
+
+# 繰り返し二乗法
+# a**bをmで割った余りを計算量O(log m)で出す
+# pow(a, b, m)でも良い
+def power(a, b, m):
+  p = a
+  ans = 1
+  for i in range(30):
+    wari = 2**i
+    # Bを2進数と考えてA^Bを分解する
+    # 例えば5^23 = 5^1 * 5^2 * 5^4 * 5^16
+    if (b//wari) % 2 == 1:
+      ans = (ans * p) % m
+    p = (p * p) % m
+  return ans
 
 
 if TIME:
