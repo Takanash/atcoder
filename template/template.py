@@ -12,7 +12,7 @@ def main():
   S = [int(i) for i in input().split(' ')]
   # N行の数値の配列Aを取得する場合
   A = [int(input()) for _ in range(N)]
-  # N 行の `L R` を二次元配列[[L1, R1], ...]として取得する場合 
+  # N 行の `L R` を二次元配列[[L1, R1], ...]として取得する場合
   L_R = [list(map(int, input().split(' '))) for _ in range(N)]
 
 
@@ -28,10 +28,22 @@ def error(*args, end="\n"):
 # @param [int] value 変換する値
 # @param [int] base 変換するn進数
 # @return [str] n進数に変換した値
-def base10int(value, base):
+def decimal_to_base(value, base):
     if (int(value / base)):
-        return base10int(int(value / base), base) + str(value % base)
+        return decimal_to_base(int(value / base), base) + str(value % base)
     return str(value % base)
+
+
+# n進数→10進数への変換
+# CAUTION: 11進数以上は変換不可
+# @param [str] value 変換する値
+# @param [int] base valueのn進数
+# @return [str] 10進数に変換した値
+def base_to_decimal(value, base):
+  sum = 0
+  for i, c in enumerate(reversed(value)):
+    sum += int(c) * base ** i
+  return sum
 
 
 # ビット全探索
