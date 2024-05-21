@@ -98,6 +98,16 @@ def power(a, b, m):
   return ans
 
 
+# 引数の配列のニム和（XORの和）を返す
+# @param [list] arr ニム和を求める配列
+# @return [int] ニム和
+def nim_sum(arr):
+  sum = arr[0]
+  for a in arr[1:]:
+    sum = sum ^ a
+  return sum
+
+
 if TIME:
   import time
   start = time.time()
