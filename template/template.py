@@ -7,13 +7,13 @@ def main():
   # 数値Nを取得する場合
   N = int(input())
   # 数値N, Xを取得する場合
-  N, X = [int(i) for i in input().split(' ')]
+  N, X = [int(i) for i in input().replace('\n', '').split(' ')]
   # 1行の空白文字で分割された数値を配列Sとして取得する場合
-  S = [int(i) for i in input().split(' ')]
+  S = [int(i) for i in input().replace('\n', '').split(' ')]
   # N行の数値の配列Aを取得する場合
   A = [int(input()) for _ in range(N)]
   # N 行の `L R` を二次元配列[[L1, R1], ...]として取得する場合
-  L_R = [list(map(int, input().split(' '))) for _ in range(N)]
+  L_R = [list(map(int, input().replace('\n', '').split(' '))) for _ in range(N)]
 
 
 
